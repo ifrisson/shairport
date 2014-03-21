@@ -10,23 +10,57 @@ You need the following installed:
 
 Perl modules (install from CPAN if needed e.g. `perl -MCPAN -e 'install X'`):
 
- * HTTP::Request
- * HTTP::Message
- * Crypt::OpenSSL::RSA
- * IO::Socket::INET6
- * Net::SDP
+once cpan is installed you can install the perl modules by issuing the following commands
+
+
+	cpan install HTTP::Request
+	cpan install HTTP::Message
+	cpan install Crypt::OpenSSL::RSA
+	cpam install IO::Socket::INET6
+	cpan install Net::SDP
 
 ## Debian/Ubuntu:
 
     apt-get install build-essential libssl-dev libcrypt-openssl-rsa-perl libao-dev libio-socket-inet6-perl libwww-perl avahi-utils pkg-config
     make
     perl shairport.pl
+    
+to install as a daemon 
+  
+    make install
+    
+to change the service name
+    
+	nano shairport.pl
+    
+and look for the line that says my $apname = "ShairPort $$ on " . `hostname`; and change it to 
+
+    my $apname = "WHATEVER YOU LIKE";
+    
+close the file with the Ctrl-X key combination. Press Y to accept the changes.
+copy the startup deamon to /etc/init.d/
+
+    cp shairport.init.sample /etc/init.d/shairport
+
+make the file executable
+
+    sudo chmod +x /etc/init.d/shairport
+
+add it as a boot up service
+
+    sudo update-rc.d shairport defaults
+
+Test, then reboot
+
+    sudo service shairport start
+    
 
 ## Redhat/Fedora:
 
     yum install openssl-devel libao libao-devel perl-Crypt-OpenSSL-RSA perl-IO-Socket-INET6 perl-libwww-perl avahi-tools
     make
     perl shairport.pl
+    
 
 ## Gentoo/Funtoo
 
