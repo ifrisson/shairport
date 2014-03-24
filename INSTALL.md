@@ -16,7 +16,7 @@ once cpan is installed you can install the perl modules by issuing the following
 	cpan install HTTP::Request
 	cpan install HTTP::Message
 	cpan install Crypt::OpenSSL::RSA
-	cpam install IO::Socket::INET6
+	cpan install IO::Socket::INET6
 	cpan install Net::SDP
 
 ## Debian/Ubuntu:
