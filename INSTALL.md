@@ -22,6 +22,7 @@ once cpan is installed you can install the perl modules by issuing the following
 ## Debian/Ubuntu:
 
     apt-get install build-essential libssl-dev libcrypt-openssl-rsa-perl libao-dev libio-socket-inet6-perl libwww-perl avahi-utils pkg-config
+    git clone https://github.com/ifrisson/forked-daapd.git
     make
     perl shairport.pl
     
